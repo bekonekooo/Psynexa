@@ -1,0 +1,832 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@700&display=swap');
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+
+  min-height: 100vh;
+  background-color: black;
+  overflow-x: hidden; 
+
+}
+
+
+
+nav{
+  background-color: black;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+ 
+  height: 50px;
+  
+}
+nav ul{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+nav li{
+  height: 50px;
+  margin-right: 20px;
+
+}
+nav a{
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: aliceblue;
+}
+nav a:hover{
+  background-color: #414142;
+}
+nav li:first-child{
+  margin-right: auto;
+
+}
+.sidebar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.507);
+  box-shadow: -10px 0 10px rgba(107, 107, 107, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  backdrop-filter: blur(10px);
+}
+.sidebar.show {
+  display: flex; /* Show sidebar */
+}
+.sidebar li{
+  width: 100%;
+}
+@media (max-width :800px) {
+  .hideOnMobile{
+    display: none;
+  }
+}
+@media (min-width :800px) {
+ .hideBig{
+  display: none;
+ }
+}
+/* STARTO NUN CSS i NE GECIS */
+
+.bannerContainer {
+  display: flex;
+
+ 
+  justify-content: space-between;
+  position: relative;
+}
+
+.left-pane {
+  flex: 1; /* Takes up half the screen */
+  background-color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative; /* Needed for absolute positioning of the circle */
+}
+.left-pane-cont {
+  width: 100%; /* Ensure it takes the full width of .left-pane */
+  box-sizing: border-box; /* Include padding/border in the width */
+  padding: 0; /* Reset padding if necessary */
+  margin: 0; /* Reset margin */
+}
+
+
+/* Right pane */
+.right-pane {
+  flex: 1; /* Takes up half the screen */
+  background-color: black!important;
+ width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.circle-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align to the left */
+  gap: 20px; /* Add spacing between circles */
+}
+.circle0 {
+  position: absolute;
+  top: 25%; /* Responsive positioning */
+  left: -20%; /* Adjust to position outside the canvas */
+ 
+  max-width: 180px; /* Maximum size */
+  max-height: 180px; /* Maximum size */
+}
+
+.circle1 {
+  position: absolute;
+  top: 75%; /* Responsive positioning */
+  left: -20%; /* Adjust based on desired look */
+ 
+  max-width: 150px; /* Maximum size */
+  max-height: 150px; /* Maximum size */
+}
+
+.circle2 {
+  position: absolute;
+  top: 155%; /* Responsive positioning */
+  left: -20%; /* Adjust based on desired look */
+  
+  max-width: 120px; /* Maximum size */
+  max-height: 120px; /* Maximum size */
+}
+@media (max-width: 750px) {
+  .circle0, .circle1, .circle2 {
+   margin-left: 7%;
+  }
+}
+@media (max-width: 550px) {
+  .circle0, .circle1, .circle2 {
+   margin-left: 5%;
+  }
+}
+@media (max-width: 450px) {
+  .circle0, .circle1, .circle2 {
+   margin-left: 3%;
+  }
+}
+@media (max-width: 370px) {
+  .circle0, .circle1, .circle2 {
+   margin-left: 1%;
+  }
+}
+
+
+
+
+
+
+
+.berkay {
+  font-family: 'Corinthia'; /* Ensure you have the font imported */
+  font-size: 55px; /* Font size */
+  font-weight: 400; /* Font weight */
+  line-height: 42px; /* Line height */
+  text-align: left; /* Align text to the left */
+  margin: 0; /* Reset margin if needed */
+  color: aliceblue;
+}
+
+.aydin {
+  font-family: 'Clash Display'; /* Ensure the font is imported */
+  font-size: 100px; /* Font size */
+  font-weight: 700; /* Font weight */
+  line-height: 90px; /* Line height */
+  text-align: left; /* Align text to the left */
+  margin: 0; /* Reset margin if needed */
+  color: #FFEB5C;
+}
+.left-pane p{
+  font-family: 'Clash Display'; /* Ensure the font is imported */
+  font-size: 32px; /* Font size */
+  font-weight: 400; /* Font weight */
+  line-height: 51.66px; /* Line height */
+  text-align: left; /* Align text to the left */
+  margin: 0; /* Reset margin if needed */
+  color: aliceblue;
+}
+.left-pane p span{
+  font-family: 'Clash Display'; /* Ensure the font is imported */
+  font-size: 32px; /* Font size */
+  font-weight: 700; /* Font weight */
+  line-height: 51.66px; /* Line height */
+  text-align: left; /* Align text to the left */
+  margin: 0; /* Reset margin if needed */
+  color:green;
+}
+.writing-container {
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack text elements vertically */
+  align-items: flex-start; /* Align text to the start (left) */
+  text-align: left; /* Ensure text is aligned to the left */
+  padding-left: 100px;
+ 
+  max-width: 398px;
+}
+@media (max-width:450px){
+.writing-container{
+  padding-left: 50px;
+}
+}
+
+@media (max-width: 750px) {
+  .bannerContainer {
+    flex-direction: column; /* Stack vertically */
+  }
+  nav{
+    padding: 0 20px;
+  }
+
+  .left-pane, .right-pane {
+   
+    width: 100%; /* Take full width */
+    height: auto; /* Reset height */
+  }
+
+  .green {
+    width: 100%; /* Ensure full width */
+    margin: 10px auto; /* Center it with some space */
+    position: relative; /* Ensure it stays in place */
+  }
+} 
+
+@media (max-width:575px){
+  .writing-container{
+    max-width: 270px;
+  }
+  .aydin{
+    font-size: 40px;
+  }
+  .left-pane p{
+    font-size: 24px;
+    line-height: 40px;
+  }
+ 
+}
+
+.icons {
+  display: flex; 
+  align-items: center;
+}
+
+.icon-1 {
+  width: 150px;
+  height: 50px; 
+  display: flex; 
+  align-items: center; 
+  position: relative; 
+  background-color:  #FFEB5C;
+  
+  border-radius: 15%;
+ 
+}
+
+.hire-text {
+  margin-top: -5px; 
+  display: flex; 
+  align-items: center; 
+  margin-left: 10px;
+}
+.icon-1 svg:last-of-type {
+  margin-left: 10px; 
+}
+.icon-1 svg:first-of-type {
+margin-left: 10px;
+}
+.ME{
+  font-weight: 800;
+}
+
+.icon-2 {
+  width: 150px;
+  height: 45px; 
+  background-color: purple; 
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
+  color: black; 
+  cursor: pointer; 
+  margin-left: 20px;
+  border-radius: 15%;
+}
+
+.icon-2 span {
+  margin: 0 5px; 
+}
+.icon-2 span:first-of-type{
+  font-weight: 900;
+}
+.right-pane .photo {
+ 
+  max-height: 750px;
+
+  object-fit: cover; 
+  max-width: 100%;
+}
+
+
+
+/* GreenMiddle burda başlıyor*/
+
+.MrBody{
+  display: flex;
+  flex-direction: column;
+}
+.green-middle {
+  width: 100%; 
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #56C4AD;
+  position: relative;
+
+}
+
+.left-third, .middle-third, .right-third {
+  width: calc(33.33% - 2px); /* Each section gets 1/3rd of the width, minus part of the divider width */
+  height: 80px; /* Full height */
+  background-color: #56C4AD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.divider {
+  width: 1px;
+  height: 40px; /* Full height */
+  background-color: rgb(0, 0, 0);
+}
+
+.left-third span:first-child,
+.middle-third span:first-child,
+.right-third span:first-child {
+  font-weight: 900;
+  font-size: 54px;
+}
+.left-third span:last-child,
+.middle-third span:last-child,
+.right-third span:last-child {
+  font-weight: bold;
+}
+.first-icon {
+  position: absolute;
+  fill: #ffffff; /* White color */
+  right: 94%; 
+  top: 70%;  
+}
+.second-icon{
+  position: absolute;
+  fill: #ffffff; 
+  top:-15%;
+  left:90%;
+}
+@media(max-width:520px){
+  .first-icon {
+    right: 92%;
+  }
+}
+                          /* ABOUT ME PART COMES */
+
+                          .about {
+                            display: flex;
+                            justify-content: space-between; 
+                            width: 100%; 
+                            color: #ffffff;
+                            margin-top: 7%;
+                           
+                          }
+                          
+                          .box {
+                            width: 48%;
+                           
+                            background-color: black; 
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center; 
+                            border: 1px solid black; 
+                          }
+                          .box-2{
+                            width: 48%; 
+                           
+                            background-color: black; 
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center; 
+                            border: 1px solid black; 
+                            padding-right: 10%;
+                          }
+
+
+                          .box img {
+                            max-width: 100%; 
+                            max-height: 100%; 
+                            object-fit: cover; 
+                            padding: 30px 20px 10px 20px;
+                          }
+                          .text-container {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start; 
+                            margin-bottom: 20px;
+                            width: 100%;
+                         
+                          }
+                          
+                          .text-container h1 {
+                            font-family: 'Clash Display';
+                            font-size: 54px;
+                            font-weight: 600;
+                            line-height: 60px;
+                            text-align: left;
+                            margin: 10px 0;
+                            color: aliceblue;
+                          }
+                          
+                          .text-container h2 {
+                            font-family: 'Clash Display';
+                            font-size: 18px;
+                            font-weight: 500;
+                            line-height: 24px;
+                            text-align: left;
+                            margin: 10px 0;
+                            color: aliceblue; 
+                          }
+                          
+                          .list-container ul {
+                            list-style-type: none;
+                            padding: 0;
+                            text-align: left;
+                          }
+                          
+                          .list-container li {
+                            margin: 10px 0;
+                            color: aliceblue;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                        
+                          }
+                          .list-container li span{
+                            height: 50px;
+                            width: 50px;
+                            align-items: center;
+                            padding: 3px;
+                            
+                          
+                          }
+                          
+                          .number-1 {
+                            font-size: 32px;
+                            font-weight: bold;
+                            margin-right: 10px;
+                            color: black;
+                            background-color: purple;
+                           
+                          }
+                          .number-2 {
+                            font-size: 32px;
+                            font-weight: bold;
+                            margin-right: 10px;
+                            color: black;
+                            background-color: yellowgreen;
+                           
+                          }
+                          .number-3 {
+                            font-size: 32px;
+                            font-weight: bold;
+                            margin-right: 10px;
+                            color: black;
+                            background-color: blue;
+                           
+                          }
+                          .number-4 {
+                            font-size: 32px;
+                            font-weight: bold;
+                            margin-right: 10px;
+                            color: black;
+                            background-color: yellow;
+                           
+                          }
+                          
+                          .text-line {
+                            margin-top: 20px;
+                            font-size: 18px;
+                            text-align: center;
+                            color: aliceblue;
+                          }
+                          .numberText{
+                            display: flex;
+                            flex-direction: column;
+                          }
+
+                          .list-container{
+                            padding-left: 30px;
+                          }
+                          @media (max-width: 900px) {
+                            .about {
+                              flex-direction: column; 
+                              align-items: center;
+                            }
+                          
+                            .box, .box-2 {
+                              width: 100%;
+                              margin-bottom: 20px; 
+                              padding-left: 10%;
+                              padding-right: 10%;
+                              box-sizing: border-box; 
+                            }
+                    
+                       
+                         
+                          }
+                          @media (max-width: 550px) {
+                            .box-2 h1 {
+                              font-size: 24px; 
+                              line-height: 28px;
+                            }
+                          
+                            .box-2 h2 {
+                              font-size: 18px;
+                            }
+                            .numberText h3 {
+                              display: none; 
+                          }
+                         
+
+                          .about-family .text-container h1 {
+                            line-height: 40px;
+                            font-size: 34px;
+                          }
+
+                          }
+
+
+
+
+
+                          /* ABOUT FAMILY START CSS */
+
+
+                          .about-family {
+                             background-color: #56C4AD; 
+                            text-align: center;
+                            margin-top: 75px;
+                            padding-top: 50px;
+                            
+                          }
+
+                          .about-family  .text-container{
+                            text-align: center;
+                            align-items: center;
+                          }
+                          .about-family  .text-container h1 {
+                            font-family: 'Clash Display', sans-serif; 
+                            font-size: 54px;
+                            font-weight: 600;
+                            line-height: 60px;
+                            color: white; 
+                            margin-bottom: 10px;
+                       
+                          }
+                          
+                          .about-family  .text-container h5 {
+                            font-family: 'Clash Display', sans-serif;
+                            font-size: 18px;
+                            font-weight: 400;
+                            color: white;
+                            margin-bottom: 30px;
+                          }
+                          
+                          .about-family .photo-container {
+                            display: flex;
+                            justify-content: space-around; 
+                            align-items: center; 
+                            
+                          }
+                          
+                          .about-family  .photo-container img {
+                            width: 23%; 
+                            height: 400px; 
+                            object-fit: cover; 
+                            border-radius: 8px;  
+                          }
+
+                          .about-family  .photo-container .member-2{
+                            margin-left: 20px;
+                            margin-right: 10px;
+                          }
+                          .about-family  .photo-container .member-3{
+                            margin-left: 10px;
+                            margin-right: 20px;
+                          }
+
+                          @media (max-width: 900px) {
+                            .about-family .photo-container {
+                              flex-wrap: wrap; 
+                              justify-content: center; 
+                            }
+                          
+                            .about-family .photo-container img {
+                              width: 45%; 
+                              margin-bottom: 20px; 
+                            }
+                            .about-family  .photo-container .member-2{
+                              margin-left: 7%;
+                              margin-right: 0;
+                           
+                            }
+                            .about-family  .photo-container .member-3{
+                              margin-left: 0;
+                              margin-right: 7%;
+                           
+                            }
+                          }
+
+                          @media (max-width: 550px) {
+                    
+
+                          .about-family .text-container h1 {
+                            line-height: 40px;
+                            font-size: 34px;
+                          }
+
+                          }
+                          @media (max-width: 550px) {
+                    
+
+                            .about-family .text-container h1 {
+                              line-height: 20px;
+                              font-size: 24px;
+                            }
+                            .icon-1{
+                              width: 120px;
+                            }
+                            .icon-2{
+                              width: 120px;
+                            }
+  
+                            }
+
+                            @media (max-width: 450px) {
+                              .about-family .photo-container {
+                                flex-direction: column; 
+                                align-items: center; 
+                              }
+                            
+                              .about-family .photo-container img {
+                                width: 90%; 
+                                height: auto; 
+                                margin-bottom: 15px; 
+                              }
+                            
+                              .about-family .text-container h1 {
+                                font-size: 24px;
+                                line-height: 20px;
+                              }
+                              .about-family .photo-container .member-3 {
+                                margin-left: 0;
+                                margin-right: 0;
+                            }
+                            .about-family .photo-container .member-2 {
+                              margin-left: 0;
+                              margin-right: 0%;
+                          }
+                            }                            
+
+
+  /* Footer Part */
+
+  .footer {
+    display: flex;
+    flex-direction: column; /* Stack everything in a column */
+    padding: 20px; /* Add some padding around the footer */
+    background-color: black; /* Change background color to black */
+    color: #f1f1f1; /* Set text color to a light color (aliquette) */
+  }
+  
+  .footer-content {
+    display: flex; /* Display the two main boxes in a row */
+    justify-content: space-between; /* Space out the boxes */
+  }
+  
+  .footer-box {
+    flex: 1; /* Allow the boxes to grow and fill the space equally */
+    margin: 10px; /* Margin between the boxes */
+    padding: 20px; /* Padding inside each box */
+    background-color: #333; /* Change background color for the boxes to a dark gray */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for the boxes */
+  }
+  
+  .group-list {
+    display: flex; /* Display groups horizontally */
+    justify-content: space-between; /* Space out the groups */
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin-left: 20px;
+  }
+  
+  .group-list li {
+    flex: 1; /* Allow each li to take equal space */
+    margin-right: 20px; /* Space between groups */
+    display: flex; /* Make each li a flex container */
+    flex-direction: column; /* Align nested lists vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+  
+  .nested-list {
+    list-style-type: disc; /* Style for nested list */
+    margin-top: 5px; /* Space above nested list */
+  }
+  
+  .email-subscription {
+    margin-top: 20px; /* Space above the email subscription section */
+    padding-left: 20px;
+  }
+  
+  .email-input {
+    padding: 10px; /* Padding for the input */
+    margin-right: 10px; /* Space between input and button */
+    border: 1px solid #ccc; /* Border for the input */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fff; /* Optional: set a white background for the input */
+  }
+  
+  .subscribe-button {
+    padding: 10px 15px; /* Padding for the button */
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Text color for the button */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .subscribe-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  /* Styles for the copyright section */
+  .copyright {
+    text-align: center; /* Center the text */
+    padding: 10px 0; /* Vertical padding for spacing */
+    background-color: #222; /* Darker background for copyright */
+    color: #f1f1f1; /* Text color for copyright */
+    margin-top: 20px; /* Space above the copyright */
+  }
+  
+  .left-box {
+    margin: 0 30px 0 30px;
+ 
+    background-color: black;
+  }      
+  .right-box{
+    max-width: 600px;
+    background-color: black;
+  }     
+  .copyright{
+    background-color: black;
+  }  
+  @media (max-width: 850px) {
+    .footer-content {
+      flex-direction: column; /* Stack the boxes in a column */
+    }
+  
+    .footer-box {
+      margin: 10px 0; /* Adjust margin for stacked layout */
+    }
+    .left-box {
+      margin: 0 30px 0 30px;
+      max-width: 800px;
+      background-color: black;
+    }      
+    .right-box{
+      max-width: 600px;
+      background-color: black;
+  }}
+
+
+  @media (min-width:1300px){
+    .left-pane-cont{
+      margin-left: 20%;
+    } 
+  }
+  @media (min-width:1300px){
+    .left-pane-cont{
+      margin-left: 20%;
+    } 
+  }
+
+
+
+
+
+
+
