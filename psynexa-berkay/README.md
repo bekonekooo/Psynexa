@@ -6,4 +6,5 @@ After executing this command, your front-end application will launch, and the ma
 
 Libraries Used
 Framer Motion: This library is utilized for creating smooth and engaging animations within the application, enhancing user experience and interactivity.
+Framework is react
 
